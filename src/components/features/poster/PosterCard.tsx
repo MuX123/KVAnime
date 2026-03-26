@@ -89,7 +89,7 @@ export const PosterCard = memo(function PosterCard({
 
   if (layout === 'list') {
     return (
-      <motion.div
+      <motion.button
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.99 }}
         onClick={() => onClick?.(anime)}
@@ -99,7 +99,7 @@ export const PosterCard = memo(function PosterCard({
           className,
         )}
       >
-        <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md border border-cyan-300/30">
+        <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md border border-cyan-300/30" style={{ position: "relative" }}>
           <Image src={cover} alt={anime.title} fill sizes="56px" className="object-cover" unoptimized />
         </div>
 
@@ -144,7 +144,7 @@ export const PosterCard = memo(function PosterCard({
             Edit
           </button>
         ) : null}
-      </motion.div>
+      </motion.button>
     );
   }
 
@@ -160,7 +160,7 @@ export const PosterCard = memo(function PosterCard({
       onMouseLeave={() => setTilt({ x: 0, y: 0 })}
       style={{ perspective: '900px' }}
     >
-      <motion.div
+      <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         onClick={() => onClick?.(anime)}
@@ -174,7 +174,7 @@ export const PosterCard = memo(function PosterCard({
           transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         }}
       >
-        <div className="relative aspect-[2/3]">
+        <div className="relative aspect-[2/3]" style={{ position: "relative" }}>
           <Image
             src={cover}
             alt={anime.title}
@@ -230,7 +230,7 @@ export const PosterCard = memo(function PosterCard({
             </button>
           ) : null}
         </div>
-      </motion.div>
+      </motion.button>
     </motion.div>
   );
 });
